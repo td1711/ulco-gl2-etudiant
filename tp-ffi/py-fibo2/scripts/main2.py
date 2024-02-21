@@ -2,6 +2,7 @@ import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import numpy as np
+import myfibo
 
 
 def test_func(x: int):
@@ -10,8 +11,8 @@ def test_func(x: int):
 
 if __name__ == '__main__':
 
-    xs = np.arange(-10, 11, 1)
-    ys = np.vectorize(test_func)(xs)
+    xs = np.arange(0, 10, 1)
+    ys = np.vectorize(myfibo.fibo_naive)(xs)
 
     fig, ax = plt.subplots()
     ax.plot(xs, ys)
