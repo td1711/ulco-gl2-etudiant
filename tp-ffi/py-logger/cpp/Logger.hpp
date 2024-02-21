@@ -11,6 +11,7 @@ using Item = std::tuple<Level, std::string>;
 class Logger {
   private:
     std::vector<Item> _items;
+    std::string getLevelId(Item t) const;
 
   public:
     void addItem(Level l, const std::string & m);

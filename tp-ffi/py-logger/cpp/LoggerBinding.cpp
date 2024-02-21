@@ -10,7 +10,14 @@ PYBIND11_MODULE(Logger, m) {
         .value("Error", Level::Error)
         ;
         
-    // TODO bind Logger class
+
+    pybind11::class_<Logger>(m, "Logger")
+        .def(pybind11::init<>())
+        .def("add_item", &Logger::addItem)
+        .def("report_by_added", &Logger::reportByAdded)
+        .def("report_by_level", &Logger::reportByLevel);
+    
+
 
 }
 
