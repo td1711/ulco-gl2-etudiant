@@ -28,5 +28,7 @@ main :: IO ()
 main = do
     putStrLn "this is log-hs"
     
+    res <- mycompute 18
+    print res
     res <- mycomputeFile 18
     print res
