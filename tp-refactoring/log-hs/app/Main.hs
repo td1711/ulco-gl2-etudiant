@@ -24,11 +24,28 @@ mycomputeFile v0 = do
     hClose message
     return v2
 
+mycomputeF :: (String -> IO()) -> Int -> IO Int
+mycomputeF logF v0 = do
+    logF ("add3 " ++ show v0)
+    let v1 = add3 v0
+    logF ("amul2 " ++ show v1)
+    let v2 = mul2 v1
+    return v2
+
 main :: IO ()
 main = do
     putStrLn "this is log-hs"
     
     res <- mycompute 18
     print res
-    res <- mycomputeFile 18
-    print res
+
+    resFile <- mycomputeFile 18
+    print resFile
+    
+    resF <- mycomputeF putStrLn 18
+    print resF
+
+    message <- openFile "message.txt" WriteMode
+    resFileF <- mycomputeF (hPutStrLn message) 18
+    hClose message
+    print resFileF
