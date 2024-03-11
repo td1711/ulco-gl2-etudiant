@@ -1,4 +1,9 @@
 {
     "nixEnvSelector.nixFile": "${workspaceRoot}/default.nix",
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.associations": {
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
+    }
 }
