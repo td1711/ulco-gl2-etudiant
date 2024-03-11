@@ -20,21 +20,26 @@ int mycomputefile(logFunc_t logF, int v0){
     return v2;
 }
 
-void cout(std::string s){
+void cout(const std::string &s){
     std::cout << s << std::endl;
 }
 
-void file(std::string s){
-    std::fstream of("message.txt");
-    of << s << std::endl;
-}
 
 int main() {
     std::cout << "this is log-cpp" << std::endl;
 
+    logFunc_t f1 = [](const std::string & str){
+        std::cout << str;
+    };
+
+    std::ofstream of("message.txt");
+    logFunc_t f2 = [&of](const std::string & str){
+        of << str << std::endl;
+    };
+
     
     mycomputefile(cout, 18);
-    mycomputefile(file, 18);
+    mycomputefile(f2, 18);
 
     return 0;
 }
