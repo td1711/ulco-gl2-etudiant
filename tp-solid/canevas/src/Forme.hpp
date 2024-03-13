@@ -1,20 +1,11 @@
 #pragma once
 
-class Forme {
+#include "Descriptible.hpp"
+
+class Forme : public Descriptible{
     public:
         virtual ~Forme() = default;
-};
 
-class Disque : public Forme {
-    public:
-        double _rayon;
-        Disque(double rayon);
-};
+        virtual double aire()const=0;
 
-class Rectangle : public Forme {
-    public:
-        double _largeur;
-        double _hauteur;
-        Rectangle(double largeur, double hauteur);
 };
-
