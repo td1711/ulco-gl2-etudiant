@@ -17,7 +17,7 @@ void testBoard(Board & b) {
     Rf.report(b);
 }
 
-void testNumBoard(NumBoard b){
+void testNumBoard(NumBoard & b){
     std::cout << b.getTitle() << std::endl;
     b.addNum("item 1");
     b.addNum("item 2");
@@ -34,6 +34,7 @@ int main() {
     testBoard(b1);
 
     NumBoard b2(0);
+    testBoard(b2);
     testNumBoard(b2);
 
     return 0;
