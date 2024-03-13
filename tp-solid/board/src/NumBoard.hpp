@@ -1,6 +1,7 @@
 #include <iostream>
+#include "Board.hpp";
 
-class NumBoard {
+class NumBoard : public Board{
     protected:
         int n;
     
@@ -10,5 +11,9 @@ class NumBoard {
         int increment(){
             n+=1;
             return n;
+        }
+
+        void addNum(const std::string & t) {
+            add(std::to_string(increment())+"-"+t);
         }
 };
