@@ -17,7 +17,6 @@ void testBoard(Board & b) {
 }
 
 int main() {
-
     Board b1;
     testBoard(b1);
 
