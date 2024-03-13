@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Board.hpp";
+#include "Board.hpp"
 
 class NumBoard : public Board{
     protected:
