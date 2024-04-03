@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include <vector>
+#include <list>
 #include "Task.hpp"
 
 class Board{
@@ -9,11 +9,11 @@ class Board{
         int _nextId;
 
     public:
-        std::vector<Task> _todo;
-        //std::vector<Task> _done;
+        std::list<Task> _todo;
+        std::list<Task> _done;
 
         Board();
 
-        Task addTodo(std::string description);
-        //void toDone(int id);
+        void addTodo(const std::string &description);
+        void toDone(int id);
 };
