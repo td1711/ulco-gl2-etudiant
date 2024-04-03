@@ -25,6 +25,10 @@ class Board {
 
         void tryGoLeft();
 
-        // TODO
-        
+        void tryGoRight();
+
+        void tryGoUp();
+
+        void tryGoDown();
+
 };

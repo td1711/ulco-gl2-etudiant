@@ -37,6 +37,21 @@ Cell Board::operator()(int i, int j) const {
 }
 
 void Board::tryGoLeft() {
-    if(_j > 0)
+    if(_j > 0 && _board[_i][_j-1] == Cell::Free)
         _j--;
+}
+
+void Board::tryGoRight() {
+    if(_j < 9 && _board[_i][_j+1] == Cell::Free)
+        _j++;
+}
+
+void Board::tryGoUp() {
+    if(_i < 9 && _board[_i+1][_j] == Cell::Free)
+        _i++;
+}
+
+void Board::tryGoDown() {
+    if(_i > 0 && _board[_i-1][_j] == Cell::Free)
+        _i--;
 }
