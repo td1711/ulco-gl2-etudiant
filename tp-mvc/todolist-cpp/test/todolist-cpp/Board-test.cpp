@@ -7,5 +7,5 @@
 TEST_CASE( "Test Add Task to Board"){
     Board b;
     Task t = b.addTodo("Task 1");
-    REQUIRE(t._id == 0);
+    REQUIRE(t._id == 1);
 }

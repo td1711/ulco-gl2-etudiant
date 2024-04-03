@@ -1,7 +1,7 @@
 #include <todolist-cpp/Board.hpp>
 
 Board::Board(){
-    _nextId = 0;
+    _nextId = 1;
 }
 
 Task Board::addTodo(std::string description){
