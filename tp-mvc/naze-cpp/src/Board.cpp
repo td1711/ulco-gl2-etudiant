@@ -37,7 +37,6 @@ Cell Board::operator()(int i, int j) const {
 }
 
 void Board::tryGoLeft() {
-    _i++;
-    _j++;
-    // TODO
+    if(_j > 0)
+        _j--;
 }

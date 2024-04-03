@@ -21,10 +21,14 @@ TEST_CASE( "init, 2" ) {
 }
 
 TEST_CASE( "tryGoLeft, ok" ) {
-    BoardTest b(7,3);
+    BoardTest b(7,1);
     b.tryGoLeft();
     REQUIRE( b.getI() == 7 );
-    REQUIRE( b.getJ() == 2 );
+    REQUIRE( b.getJ() == 0 );
+
+    b.tryGoLeft();
+    REQUIRE( b.getJ() == 0 );
+
 }
 
 // TODO
