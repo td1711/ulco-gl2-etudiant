@@ -5,8 +5,12 @@ std::string showTask(const Task &t){
 }
 
 std::string showBoard(const Board &b){
-    std::string s;
+    std::string s = "Todo:\n";
     for(auto t : b._todo){
+        s += showTask(t) + "\n";
+    }
+    s += "Done:\n";
+    for(auto t : b._done){
         s += showTask(t) + "\n";
     }
     return s;

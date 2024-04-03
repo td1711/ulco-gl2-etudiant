@@ -11,5 +11,10 @@ TEST_CASE( "show Task" ){
 TEST_CASE( "show Board" ){
     Board b;
     b.addTodo("Task 1");
-    REQUIRE(showBoard(b) == "[1] Task 1\n");
+    b.addTodo("Task 2");
+    REQUIRE(showBoard(b) == "Todo:\n[1] Task 1\n[2] Task 2\nDone:\n");
+    b.toDone(1);
+
+    REQUIRE(showBoard(b) == "Todo:\n[2] Task 2\nDone:\n[1] Task 1\n");
+
 }
