@@ -2,7 +2,7 @@
 
 ## planning
 
-- [] représenter une tache + affichage (+ tests unitaires)
+- [X] représenter une tache + affichage (+ tests unitaires)
 - [] implémenter Board + ajouter une tache (+ tests unitaires)
 - [] afficher un board (+ tests unitaires)
 - [] passer une tache en "done" (+ tests unitaires)
