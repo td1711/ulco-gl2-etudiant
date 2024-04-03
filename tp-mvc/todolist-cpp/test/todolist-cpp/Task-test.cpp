@@ -8,9 +8,3 @@ TEST_CASE( "test task struct" ) {
     REQUIRE( t._name == "TODO" );
 }
 
-
-TEST_CASE( "test Board"){
-    Board b;
-    b.addTodo("task 1");
-}
-

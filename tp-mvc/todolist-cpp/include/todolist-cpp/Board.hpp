@@ -14,6 +14,6 @@ class Board{
 
         Board();
 
-        void addTodo(std::string description);
+        Task addTodo(std::string description);
         //void toDone(int id);
 };

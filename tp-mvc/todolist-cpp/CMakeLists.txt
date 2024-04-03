@@ -20,6 +20,7 @@ install( TARGETS todolist-cpp-app DESTINATION bin )
 add_executable( todolist-cpp-test
     test/todolist-cpp/Task-test.cpp
     test/todolist-cpp/View-test.cpp
+    test/todolist-cpp/Board-test.cpp
     test/main.cpp )
 target_link_libraries( todolist-cpp-test todolist-cpp-lib )
 enable_testing()
