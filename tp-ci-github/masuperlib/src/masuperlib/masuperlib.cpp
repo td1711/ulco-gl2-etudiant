@@ -5,6 +5,6 @@ std::string masuperlib::getVersion() {
 }
 
 int masuperlib::mul2(int n) {
-    return n*3;
+    return n*2;
 }
 

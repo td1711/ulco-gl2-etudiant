@@ -4,7 +4,7 @@ def fibo_naive(n: int):
     return n if n < 2 else fibo_naive(n-1) + fibo_naive(n-2)
 
 def fibo_iterative(n):
-    n1 = 1
+    n1 = 0
     n2 = 1
     fibo = 2
     if(n <= 1):

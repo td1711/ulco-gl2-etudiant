@@ -15,6 +15,10 @@ void Board::toDone(int id){
         return t._id == id;
     });
 
+
     _todo.erase(it);
     _done.push_back(*it);
+    
+
+    
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+
+        <h1>echo</h1>
+
+        <div>
+            <input id="connect_input" value="wss://ws.ifelse.io" />
+            <button id="connect_button">connect</button>
+        </div>
+
+        <div>
+            <input id="send_input" />
+            <button id="send_button" type="button" disabled>send</button>
+        </div>
+
+        <div>
+            <p id="recv_p">not connected</p>
+        </div>
+
+        <script>
+
+            let my_handler = {};
+
+            connect_button.onclick = function() {
+                my_handler = new WebSocket(connect_input.value);
+
+                my_handler.onopen = function(e) {
+                    send_button.disabled = false;
+                    send_button.onclick = function () {
+                        my_handler.send(send_input.value);
+                    };
+                    recv_p.innerHTML = "connected"
+                };
+            
+                my_handler.onmessage = function (message) {
+                    recv_p.innerHTML = "received: " + message.data;
+                    send_input.value = "";
+                }
+            };
+
+        </script>
+
+    </body>
+</html>
+
