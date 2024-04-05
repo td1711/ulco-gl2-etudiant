@@ -5,6 +5,7 @@
 #include <chrono>
 #include <iostream>
 #include <thread>
+#include <string>
 
 
 int main() {
@@ -16,10 +17,22 @@ int main() {
         std::cout << "client connected" << std::endl;
     };
     ws.onmessage = [&net](const WebSocketChannelPtr& channel, const std::string& msg) {
-        auto send = [&msg](const WebSocketChannelPtr & channel) {
-            channel->send(msg);
-        };
-        net.map(send);
+        if(net.isPending(channel)){
+            if(net.giveName(channel, msg)){
+                channel->send("Welcome " + msg);
+            }
+            else{
+                channel->send("Incorrect name !");
+            }
+        }
+        else{
+            std::optional<std::string> name = net.findName(channel);
+      
+            auto send = [&msg, name](const WebSocketChannelPtr & channel) {
+                channel->send(*name + " : " +msg);
+            };
+            net.map(send);
+        }
 
     };
     ws.onclose = [&net](const WebSocketChannelPtr& channel) {
