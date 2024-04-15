@@ -33,10 +33,27 @@ TEST_CASE("Jouer un coup"){
     REQUIRE(!jeu.jouer(3,2));
     REQUIRE(!jeu.jouer(0,3));
     REQUIRE(!jeu.jouer(0,-1));
-
-
 }
 
+TEST_CASE("Gagner partie"){
+    Jeu jeu;
+
+    REQUIRE(jeu.jouer(0,0));
+    REQUIRE(jeu.getStatus() == Status::RougeJoue);
+
+    REQUIRE(jeu.jouer(1,1));
+    REQUIRE(jeu.getStatus() == Status::VertJoue);
+
+    REQUIRE(jeu.jouer(1,0));
+    REQUIRE(jeu.getStatus() == Status::RougeJoue); 
+
+    REQUIRE(jeu.jouer(2,2));
+    REQUIRE(jeu.getStatus() == Status::VertJoue); 
+
+    REQUIRE(jeu.jouer(2,0));
+    std::cout << jeu;
+    REQUIRE(jeu.getStatus() == Status::VertGagne);   
+}
 
     // TODO
 

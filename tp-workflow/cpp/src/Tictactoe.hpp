@@ -15,6 +15,10 @@ class Jeu {
         Status currentStatus;
 
         void setStatus();
+        bool isFinished();
+        bool hasVictory(int i, int j, int directionI, int directionJ, Cell color);
+        bool isValidCell(int i, int j);
+        int nbFilledCells();
 
     public:
         /// Constructeur à utiliser.
