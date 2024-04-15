@@ -14,7 +14,20 @@ Cell Jeu::getCell(int i, int j) const {
 }
 
 std::ostream & operator<<(std::ostream & os, const Jeu & jeu) {
-    // TODO
+    for (int j = 0; j < 3; ++j){
+        for(int i = 0; i < 3; ++i){
+            if(jeu.getCell(i, j) == Cell::Vide){
+                os << ". "; 
+            }
+            if(jeu.getCell(i, j) == Cell::Rouge){
+                os << "R "; 
+            }
+            if(jeu.getCell(i, j) == Cell::Vert){
+                os << "V "; 
+            }
+        }
+        os << std::endl;
+    }
     return os;
 }
 

@@ -11,6 +11,12 @@ TEST_CASE("Test Moteur jeu") {
             REQUIRE( jeu.getCell(0,0) == Cell::Vide );
         }
     }
+
+
+    std::string s = ". . . \n. . . \n. . . \n";
+    std::stringstream display;
+    display << jeu;
+    REQUIRE(s == display.str());
 }
 
 
