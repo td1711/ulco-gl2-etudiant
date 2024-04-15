@@ -10,8 +10,7 @@ Status Jeu::getStatus() const {
 }
 
 Cell Jeu::getCell(int i, int j) const {
-    // TODO
-    return Cell::Vide;
+    return _plateau[j][i];
 }
 
 std::ostream & operator<<(std::ostream & os, const Jeu & jeu) {
@@ -25,6 +24,10 @@ bool Jeu::jouer(int i, int j) {
 }
 
 void Jeu::raz() {
-    // TODO
+    for (int j = 0; j < _plateau.size(); ++j){
+        for(int i = 0; i < _plateau.size(); ++i){
+            _plateau[j][i] = Cell::Vide;
+        }
+    }
 }
 
