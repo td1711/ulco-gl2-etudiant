@@ -19,6 +19,24 @@ TEST_CASE("Test Moteur jeu") {
     REQUIRE(s == display.str());
 }
 
+TEST_CASE("Jouer un coup"){
+    Jeu jeu;
+
+    REQUIRE(jeu.jouer(2,2));
+    REQUIRE(jeu.getStatus() == Status::RougeJoue);
+    REQUIRE(jeu.getCell(2, 2) == Cell::Vert);
+
+    REQUIRE(!jeu.jouer(2,2));
+    REQUIRE(jeu.getStatus() == Status::RougeJoue); 
+    REQUIRE(jeu.getCell(2, 2) == Cell::Vert);
+
+    REQUIRE(!jeu.jouer(3,2));
+    REQUIRE(!jeu.jouer(0,3));
+    REQUIRE(!jeu.jouer(0,-1));
+
+
+}
+
 
     // TODO
 
