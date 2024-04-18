@@ -16,6 +16,7 @@ class Gui(Gtk.Window):
         self.add(vbox)
 
         self.jeu = tictactoe.Jeu()
+        self.jeu.jouer(1,1)
 
         # drawing area
         self.drawingarea = Gtk.DrawingArea()
@@ -67,15 +68,13 @@ class Gui(Gtk.Window):
             
 
     def on_button1_clicked(self, widget):
-        # TODO on_button1_clicked
         print('TODO on_button1_clicked')
         self.drawingarea.queue_draw()
+        self.jeu.raz()
 
     def on_button2_clicked(self, widget):
         Gtk.main_quit()
 
-    def on_button2_clicked(self, widget):
-        self.jeu.raz()
     
 
 if __name__ == '__main__':
