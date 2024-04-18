@@ -1,5 +1,6 @@
 import gi
 import math
+import tictactoe
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk
@@ -14,6 +15,8 @@ class Gui(Gtk.Window):
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.add(vbox)
 
+        self.jeu = tictactoe.Jeu()
+
         # drawing area
         self.drawingarea = Gtk.DrawingArea()
         self.drawingarea.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
@@ -25,15 +28,19 @@ class Gui(Gtk.Window):
         hbox = Gtk.Box()
         vbox.pack_end(hbox, False, False, 0)
         # label
-        self.label = Gtk.Label(label="TODO")
+        self.label = Gtk.Label(label=self.jeu.displayStatus())
         hbox.pack_start(self.label, True, True, 0)
-        # TODO button1
+        # button1
+        button1 = Gtk.Button(label="rejouer")
+        button1.connect("clicked", self.on_button1_clicked)
+        hbox.pack_start(button1, True, True, 0)
+
         # button2
         button2 = Gtk.Button(label="quitter")
         button2.connect("clicked", self.on_button2_clicked)
         hbox.pack_start(button2, True, True, 0)
 
-        # TODO create game (from the C++ module)
+        #  ODO create game (from the C++ module)
 
     def on_draw(self, widget, context):
 
@@ -67,9 +74,12 @@ class Gui(Gtk.Window):
     def on_button2_clicked(self, widget):
         Gtk.main_quit()
 
+    def on_button2_clicked(self, widget):
+        self.jeu.raz()
+    
+
 if __name__ == '__main__':
     gui = Gui()
     gui.connect("destroy", Gtk.main_quit)
     gui.show_all()
     Gtk.main()
-

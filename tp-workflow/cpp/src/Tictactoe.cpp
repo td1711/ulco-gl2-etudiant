@@ -147,23 +147,24 @@ void Jeu::raz() {
             _plateau[j][i] = Cell::Vide;
         }
     }
+    currentStatus = Status::VertJoue;
 }
 
 
-void Jeu::displayStatus(){
+std::string Jeu::displayStatus(){
     if(currentStatus == Status::RougeGagne){
-        std::cout << "rouge gagne" << std::endl;
+        return "rouge gagne";
     }
     if(currentStatus == Status::VertGagne){
-        std::cout << "vert gagne" << std::endl;
+        return "vert gagne";
     }
     if(currentStatus == Status::RougeJoue){
-        std::cout << "rouge joue" << std::endl;
+        return "rouge joue";
     }
     if(currentStatus == Status::VertJoue){
-        std::cout << "vert joue" << std::endl;
+        return "vert joue";
     }
     if(currentStatus == Status::Egalite){
-        std::cout << "égalité" << std::endl;
+        return "égalité";
     }
 }

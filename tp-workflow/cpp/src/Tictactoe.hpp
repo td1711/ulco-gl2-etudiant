@@ -52,7 +52,7 @@ class Jeu {
         bool isFinished();
 
         /// Affiche à l'utilisateur l'état courant du jeu
-        void displayStatus();
+        std::string displayStatus();
 };
 
 std::ostream & operator<<(std::ostream & os, const Jeu & jeu);
