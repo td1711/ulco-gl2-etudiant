@@ -120,4 +120,35 @@ TEST_CASE("Rouge gagne diagonale droite"){
 
 }
 
+TEST_CASE("Egalité"){
+    Jeu jeu;
 
+    REQUIRE(jeu.jouer(0,0));
+    REQUIRE(jeu.getStatus() == Status::RougeJoue);
+
+    REQUIRE(jeu.jouer(1,0));
+    REQUIRE(jeu.getStatus() == Status::VertJoue);
+
+    REQUIRE(jeu.jouer(2,0));
+    REQUIRE(jeu.getStatus() == Status::RougeJoue); 
+
+    REQUIRE(jeu.jouer(0,1));
+    REQUIRE(jeu.getStatus() == Status::VertJoue); 
+
+    REQUIRE(jeu.jouer(2,1));
+    REQUIRE(jeu.getStatus() == Status::RougeJoue);   
+
+    REQUIRE(jeu.jouer(1,1));
+    REQUIRE(jeu.getStatus() == Status::VertJoue);      
+
+    REQUIRE(jeu.jouer(0,2));
+    REQUIRE(jeu.getStatus() == Status::RougeJoue);      
+
+    REQUIRE(jeu.jouer(2,2));
+    REQUIRE(jeu.getStatus() == Status::VertJoue);  
+
+    REQUIRE(jeu.jouer(1,2));
+    REQUIRE(jeu.getStatus() == Status::Egalite);  
+    std::cout << jeu;
+
+}
