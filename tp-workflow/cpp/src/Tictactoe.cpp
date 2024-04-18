@@ -149,3 +149,21 @@ void Jeu::raz() {
     }
 }
 
+
+void Jeu::displayStatus(){
+    if(currentStatus == Status::RougeGagne){
+        std::cout << "rouge gagne" << std::endl;
+    }
+    if(currentStatus == Status::VertGagne){
+        std::cout << "vert gagne" << std::endl;
+    }
+    if(currentStatus == Status::RougeJoue){
+        std::cout << "rouge joue" << std::endl;
+    }
+    if(currentStatus == Status::VertJoue){
+        std::cout << "vert joue" << std::endl;
+    }
+    if(currentStatus == Status::Egalite){
+        std::cout << "égalité" << std::endl;
+    }
+}

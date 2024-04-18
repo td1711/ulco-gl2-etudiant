@@ -15,9 +15,14 @@ class Jeu {
         Status currentStatus;
 
         void setStatus();
-        bool isFinished();
+
+        /// Renvoie la couleur du joueur gagnant s'il y en a un, sinon renvoie vide
         Cell hasVictory();
+
+        /// Teste si la cellule de coordonnées i, j est une cellule valide pour jouer un coup
         bool isValidCell(int i, int j);
+
+        /// Renvoie le nombre de coups déjà joués
         int nbFilledCells();
 
     public:
@@ -42,6 +47,12 @@ class Jeu {
 
         /// Réinitialise le jeu.
         void raz();
+
+        /// Teste si le jeu est fini, en cas de victoire ou d'égaltité
+        bool isFinished();
+
+        /// Affiche à l'utilisateur l'état courant du jeu
+        void displayStatus();
 };
 
 std::ostream & operator<<(std::ostream & os, const Jeu & jeu);
