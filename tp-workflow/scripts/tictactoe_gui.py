@@ -16,7 +16,6 @@ class Gui(Gtk.Window):
         self.add(vbox)
 
         self.jeu = tictactoe.Jeu()
-        self.jeu.jouer(1,1)
 
         # drawing area
         self.drawingarea = Gtk.DrawingArea()
@@ -51,26 +50,65 @@ class Gui(Gtk.Window):
         height = widget.get_allocated_height()
 
         context.set_source_rgb(0, 0, 0)
-        context.rectangle(0, 0, 100, 100)
+        context.rectangle(0, 0, 400, 400)
         context.fill()
+
+        context.set_source_rgb(255,0,0)
+        context.arc(width/6, height/6, 66.5-5, 0, 2*math.pi)
+        context.fill()
+
+        self.display(context)
 
         context.set_source_rgb(0.5, 0.5, 0.5)
         context.set_line_width(3)
-        context.move_to(width, 0)
-        context.line_to(0, height)
+        context.move_to(width/3, 0)
+        context.line_to(width/3, height)
+
+        context.move_to(2*width/3, 0)
+        context.line_to(2*width/3, height)
+
+        context.move_to(0, height/3)
+        context.line_to(width, height/3)
+
+        context.move_to(0, 2*height/3)
+        context.line_to(width, 2*height/3)
+
+        context.move_to(width/3, 0)
+        context.line_to(width/3, height)
         context.stroke()
 
 
+    def display(self, context):
+        width = self.drawingarea.get_allocated_width()
+        height = self.drawingarea.get_allocated_height()
+        for y in range(3):
+            for x in range(3):
+                etat = self.jeu.getCell(x,y)
+                if etat.name == "Vert":
+                    context.set_source_rgb(0,255,0)
+                    context.arc(x*width/3 + width/6, y*height/3 + height/6, 66.5-5, 0, 2*math.pi)
+                    context.fill()
+                elif etat.name == "Rouge":
+                    context.set_source_rgb(255,0,0)
+                    context.arc(x*width/3 + width/6, y*height/3 + height/6, 66.5-5, 0, 2*math.pi)
+                    context.fill()
+
     def on_area_button_press(self, widget, event):
-        # TODO on_area_button_press
         if event.button == 1:
-            print('TODO on_area_button_press')
-            
+            width = self.drawingarea.get_allocated_width()
+            height = self.drawingarea.get_allocated_height()
+
+            x = int(int(event.x) // (width/3))
+            y = int(int(event.y) // (height/3))
+            self.jeu.jouer(x,y)
+            self.drawingarea.queue_draw()
+            print(x,y)
+           
 
     def on_button1_clicked(self, widget):
         print('TODO on_button1_clicked')
-        self.drawingarea.queue_draw()
         self.jeu.raz()
+        self.drawingarea.queue_draw()
 
     def on_button2_clicked(self, widget):
         Gtk.main_quit()

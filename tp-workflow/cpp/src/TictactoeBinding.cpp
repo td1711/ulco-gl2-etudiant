@@ -19,6 +19,7 @@ PYBIND11_MODULE(tictactoe, m) {
         .def("isFinished", &Jeu::isFinished)
         .def("displayStatus", &Jeu::displayStatus)
         .def("raz", &Jeu::raz)
+        .def("getCell", &Jeu::getCell)
         ;
 
 }
