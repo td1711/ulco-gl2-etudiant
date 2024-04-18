@@ -90,37 +90,42 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classJeu.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="classJeu.html">Jeu</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        std::array&lt;std::array&lt;Cell, 3&gt;, 3&gt; _plateau;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="comment">// TODO</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <a class="code hl_enumeration" href="Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> currentStatus;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_function" href="classJeu.html#acc5795ee00edf75516d3dfe65be3e6d6">Jeu</a>();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="comment">// Retourne le status du jeu courant (Egalite, RougeGagne, VertGagne, RougeJoue, VertJoue).</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_enumeration" href="Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> <a class="code hl_function" href="classJeu.html#a98bd75332c3e5a02b4cba66ac71be750">getStatus</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_enumeration" href="Tictactoe_8hpp.html#a0133c02dfc35ffbaf07ad1a587dac4d1">Cell</a> <a class="code hl_function" href="classJeu.html#a022984175862013a957120e3066d0140">getCell</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="comment">// Joue un coup pour le joueur courant.</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="comment">// </span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="comment">// i ligne choisie (0, 1 ou 2)</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="comment">// j colonne choisie (0, 1 ou 2)</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="comment">// </span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="comment">// Si le coup est invalide, retourne false. Si le coup est valide,</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="comment">// joue le coup et retourne true.</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classJeu.html#a2f3bce909fa1582440cacb5e1923ae0e">jouer</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classJeu.html#a0bdd23a350c6b92a83474666e7b0f933">raz</a>();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>std::ostream &amp; <a class="code hl_function" href="Tictactoe_8hpp.html#a25afc2af9da3b08aad446d3102046638">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code hl_class" href="classJeu.html">Jeu</a> &amp; jeu);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">void</span> setStatus();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_enumeration" href="Tictactoe_8hpp.html#a0133c02dfc35ffbaf07ad1a587dac4d1">Cell</a> hasVictory();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">bool</span> isValidCell(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">int</span> nbFilledCells();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_function" href="classJeu.html#acc5795ee00edf75516d3dfe65be3e6d6">Jeu</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_enumeration" href="Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> <a class="code hl_function" href="classJeu.html#a98bd75332c3e5a02b4cba66ac71be750">getStatus</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_enumeration" href="Tictactoe_8hpp.html#a0133c02dfc35ffbaf07ad1a587dac4d1">Cell</a> <a class="code hl_function" href="classJeu.html#a022984175862013a957120e3066d0140">getCell</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classJeu.html#a2f3bce909fa1582440cacb5e1923ae0e">jouer</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classJeu.html#a0bdd23a350c6b92a83474666e7b0f933">raz</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classJeu.html#ae9c47d2aab58b74d0e2d0459f41954cf">isFinished</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classJeu.html#a1cf132d2600777b47c640ff09f72e4ce">displayStatus</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>std::ostream &amp; <a class="code hl_function" href="Tictactoe_8hpp.html#a25afc2af9da3b08aad446d3102046638">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code hl_class" href="classJeu.html">Jeu</a> &amp; jeu);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="ttc" id="aTictactoe_8hpp_html_a0133c02dfc35ffbaf07ad1a587dac4d1"><div class="ttname"><a href="Tictactoe_8hpp.html#a0133c02dfc35ffbaf07ad1a587dac4d1">Cell</a></div><div class="ttdeci">Cell</div><div class="ttdef"><b>Definition:</b> Tictactoe.hpp:9</div></div>
 <div class="ttc" id="aTictactoe_8hpp_html_a0133c02dfc35ffbaf07ad1a587dac4d1a53beb73e72f759f32a06d64ae520d354"><div class="ttname"><a href="Tictactoe_8hpp.html#a0133c02dfc35ffbaf07ad1a587dac4d1a53beb73e72f759f32a06d64ae520d354">Cell::Vide</a></div><div class="ttdeci">@ Vide</div></div>
 <div class="ttc" id="aTictactoe_8hpp_html_a0133c02dfc35ffbaf07ad1a587dac4d1af606b49dcc579cac95d676cdf2dc918d"><div class="ttname"><a href="Tictactoe_8hpp.html#a0133c02dfc35ffbaf07ad1a587dac4d1af606b49dcc579cac95d676cdf2dc918d">Cell::Rouge</a></div><div class="ttdeci">@ Rouge</div></div>
 <div class="ttc" id="aTictactoe_8hpp_html_a0133c02dfc35ffbaf07ad1a587dac4d1af87a604e5366b28ba26e14e20c067de3"><div class="ttname"><a href="Tictactoe_8hpp.html#a0133c02dfc35ffbaf07ad1a587dac4d1af87a604e5366b28ba26e14e20c067de3">Cell::Vert</a></div><div class="ttdeci">@ Vert</div></div>
-<div class="ttc" id="aTictactoe_8hpp_html_a25afc2af9da3b08aad446d3102046638"><div class="ttname"><a href="Tictactoe_8hpp.html#a25afc2af9da3b08aad446d3102046638">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Jeu &amp;jeu)</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:16</div></div>
+<div class="ttc" id="aTictactoe_8hpp_html_a25afc2af9da3b08aad446d3102046638"><div class="ttname"><a href="Tictactoe_8hpp.html#a25afc2af9da3b08aad446d3102046638">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Jeu &amp;jeu)</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:17</div></div>
 <div class="ttc" id="aTictactoe_8hpp_html_a67a0db04d321a74b7e7fcfd3f1a3f70b"><div class="ttname"><a href="Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a></div><div class="ttdeci">Status</div><div class="ttdef"><b>Definition:</b> Tictactoe.hpp:7</div></div>
 <div class="ttc" id="aTictactoe_8hpp_html_a67a0db04d321a74b7e7fcfd3f1a3f70ba2c20f0f873d1841a5930d97a16091e51"><div class="ttname"><a href="Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba2c20f0f873d1841a5930d97a16091e51">Status::RougeJoue</a></div><div class="ttdeci">@ RougeJoue</div></div>
 <div class="ttc" id="aTictactoe_8hpp_html_a67a0db04d321a74b7e7fcfd3f1a3f70ba453108bebc14745c9c2196195edcda50"><div class="ttname"><a href="Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba453108bebc14745c9c2196195edcda50">Status::RougeGagne</a></div><div class="ttdeci">@ RougeGagne</div></div>
@@ -128,11 +133,13 @@ $(function() {
 <div class="ttc" id="aTictactoe_8hpp_html_a67a0db04d321a74b7e7fcfd3f1a3f70ba7aa2f9935cd5f13c0bffb6aad610e33e"><div class="ttname"><a href="Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba7aa2f9935cd5f13c0bffb6aad610e33e">Status::Egalite</a></div><div class="ttdeci">@ Egalite</div></div>
 <div class="ttc" id="aTictactoe_8hpp_html_a67a0db04d321a74b7e7fcfd3f1a3f70bab23647fb7b83ed03c7236f494f083685"><div class="ttname"><a href="Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70bab23647fb7b83ed03c7236f494f083685">Status::VertGagne</a></div><div class="ttdeci">@ VertGagne</div></div>
 <div class="ttc" id="aclassJeu_html"><div class="ttname"><a href="classJeu.html">Jeu</a></div><div class="ttdef"><b>Definition:</b> Tictactoe.hpp:12</div></div>
-<div class="ttc" id="aclassJeu_html_a022984175862013a957120e3066d0140"><div class="ttname"><a href="classJeu.html#a022984175862013a957120e3066d0140">Jeu::getCell</a></div><div class="ttdeci">Cell getCell(int i, int j) const</div><div class="ttdoc">Retourne l'état d'une case du plateau.</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:12</div></div>
-<div class="ttc" id="aclassJeu_html_a0bdd23a350c6b92a83474666e7b0f933"><div class="ttname"><a href="classJeu.html#a0bdd23a350c6b92a83474666e7b0f933">Jeu::raz</a></div><div class="ttdeci">void raz()</div><div class="ttdoc">Réinitialise le jeu.</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:26</div></div>
-<div class="ttc" id="aclassJeu_html_a2f3bce909fa1582440cacb5e1923ae0e"><div class="ttname"><a href="classJeu.html#a2f3bce909fa1582440cacb5e1923ae0e">Jeu::jouer</a></div><div class="ttdeci">bool jouer(int i, int j)</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:21</div></div>
-<div class="ttc" id="aclassJeu_html_a98bd75332c3e5a02b4cba66ac71be750"><div class="ttname"><a href="classJeu.html#a98bd75332c3e5a02b4cba66ac71be750">Jeu::getStatus</a></div><div class="ttdeci">Status getStatus() const</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:7</div></div>
-<div class="ttc" id="aclassJeu_html_acc5795ee00edf75516d3dfe65be3e6d6"><div class="ttname"><a href="classJeu.html#acc5795ee00edf75516d3dfe65be3e6d6">Jeu::Jeu</a></div><div class="ttdeci">Jeu()</div><div class="ttdoc">Constructeur à utiliser.</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:3</div></div>
+<div class="ttc" id="aclassJeu_html_a022984175862013a957120e3066d0140"><div class="ttname"><a href="classJeu.html#a022984175862013a957120e3066d0140">Jeu::getCell</a></div><div class="ttdeci">Cell getCell(int i, int j) const</div><div class="ttdoc">Retourne l'état d'une case du plateau.</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:13</div></div>
+<div class="ttc" id="aclassJeu_html_a0bdd23a350c6b92a83474666e7b0f933"><div class="ttname"><a href="classJeu.html#a0bdd23a350c6b92a83474666e7b0f933">Jeu::raz</a></div><div class="ttdeci">void raz()</div><div class="ttdoc">Réinitialise le jeu.</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:144</div></div>
+<div class="ttc" id="aclassJeu_html_a1cf132d2600777b47c640ff09f72e4ce"><div class="ttname"><a href="classJeu.html#a1cf132d2600777b47c640ff09f72e4ce">Jeu::displayStatus</a></div><div class="ttdeci">void displayStatus()</div><div class="ttdoc">Affiche à l'utilisateur l'état courant du jeu.</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:153</div></div>
+<div class="ttc" id="aclassJeu_html_a2f3bce909fa1582440cacb5e1923ae0e"><div class="ttname"><a href="classJeu.html#a2f3bce909fa1582440cacb5e1923ae0e">Jeu::jouer</a></div><div class="ttdeci">bool jouer(int i, int j)</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:130</div></div>
+<div class="ttc" id="aclassJeu_html_a98bd75332c3e5a02b4cba66ac71be750"><div class="ttname"><a href="classJeu.html#a98bd75332c3e5a02b4cba66ac71be750">Jeu::getStatus</a></div><div class="ttdeci">Status getStatus() const</div><div class="ttdoc">Retourne le status du jeu courant (Egalite, RougeGagne, VertGagne, RougeJoue, VertJoue).</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:9</div></div>
+<div class="ttc" id="aclassJeu_html_acc5795ee00edf75516d3dfe65be3e6d6"><div class="ttname"><a href="classJeu.html#acc5795ee00edf75516d3dfe65be3e6d6">Jeu::Jeu</a></div><div class="ttdeci">Jeu()</div><div class="ttdoc">Constructeur à utiliser.</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:4</div></div>
+<div class="ttc" id="aclassJeu_html_ae9c47d2aab58b74d0e2d0459f41954cf"><div class="ttname"><a href="classJeu.html#ae9c47d2aab58b74d0e2d0459f41954cf">Jeu::isFinished</a></div><div class="ttdeci">bool isFinished()</div><div class="ttdoc">Teste si le jeu est fini, en cas de victoire ou d'égaltité</div><div class="ttdef"><b>Definition:</b> Tictactoe.cpp:125</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

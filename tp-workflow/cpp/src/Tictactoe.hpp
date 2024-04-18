@@ -36,13 +36,13 @@ class Jeu {
         Cell getCell(int i, int j) const;
 
 
-        // Joue un coup pour le joueur courant.
-        // 
-        // i ligne choisie (0, 1 ou 2)
-        // j colonne choisie (0, 1 ou 2)
-        // 
-        // Si le coup est invalide, retourne false. Si le coup est valide,
-        // joue le coup et retourne true.
+        /// Joue un coup pour le joueur courant.
+        /// 
+        /// i ligne choisie (0, 1 ou 2)
+        /// j colonne choisie (0, 1 ou 2)
+        /// 
+        /// Si le coup est invalide, retourne false. Si le coup est valide,
+        /// joue le coup et retourne true.
         bool jouer(int i, int j);
 
         /// Réinitialise le jeu.

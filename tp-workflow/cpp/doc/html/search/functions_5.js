@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['raz_0',['raz',['../classJeu.html#a0bdd23a350c6b92a83474666e7b0f933',1,'Jeu']]]
+  ['operator_3c_3c_0',['operator&lt;&lt;',['../Tictactoe_8cpp.html#a25afc2af9da3b08aad446d3102046638',1,'operator&lt;&lt;(std::ostream &amp;os, const Jeu &amp;jeu):&#160;Tictactoe.cpp'],['../Tictactoe_8hpp.html#a25afc2af9da3b08aad446d3102046638',1,'operator&lt;&lt;(std::ostream &amp;os, const Jeu &amp;jeu):&#160;Tictactoe.cpp']]]
 ];

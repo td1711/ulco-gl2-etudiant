@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['getcell_0',['getCell',['../classJeu.html#a022984175862013a957120e3066d0140',1,'Jeu']]],
-  ['getstatus_1',['getStatus',['../classJeu.html#a98bd75332c3e5a02b4cba66ac71be750',1,'Jeu']]]
+  ['egalite_0',['Egalite',['../Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba7aa2f9935cd5f13c0bffb6aad610e33e',1,'Tictactoe.hpp']]]
 ];
