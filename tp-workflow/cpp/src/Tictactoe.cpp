@@ -36,12 +36,54 @@ bool Jeu::isValidCell(int i, int j){
     return i >= 0 && i < 3 && j >= 0 && j < 3;
 }
 
-bool Jeu::hasVictory(int i, int j, int directionI, int directionJ,  Cell color){
-    if(!isValidCell(i, j) || _plateau[j][i] != color){
-        return 0;
-    }
+Cell Jeu::hasVictory(){
+    bool winDiagoLeft = true;
+    bool winDiagoRight = true;
+    Cell colorDiagoLeft = _plateau[0][0];
+    Cell colorDiagoRight = _plateau[0][2];
 
-    return 1 + hasVictory(i+directionI, j+directionJ, directionI, directionJ, color);
+    for(int k=0; k<3; k++){
+        Cell colorLine = _plateau[k][0];
+        Cell colorColumn = _plateau[0][k];
+        bool winLine = true;
+        bool winColumn = true;
+
+        if(colorLine == Cell::Vide){
+            winLine = false;
+        }
+        if(colorColumn == Cell::Vide){
+            winColumn = false;
+        }
+        if(colorDiagoLeft == Cell::Vide || _plateau[k][k] != colorDiagoLeft){
+            winDiagoLeft = false;
+        }
+        if(colorDiagoRight == Cell::Vide || _plateau[k][2-k] != colorDiagoRight){
+            winDiagoRight = false;
+        }
+
+
+        for(int i=0; i<3; i++){
+            if(_plateau[k][i] != colorLine){
+                winLine = false;
+            }
+            if(_plateau[i][k] != colorColumn){
+                winColumn = false;
+            }
+        }
+        if(winLine){
+            return colorLine;
+        }
+        if(winColumn){
+            return colorColumn;
+        }
+    }
+    if(winDiagoLeft){
+        return colorDiagoLeft;
+    }
+    if(winDiagoRight){
+        return colorDiagoRight;
+    }
+    return Cell::Vide;
 }
 
 int Jeu::nbFilledCells(){
@@ -61,34 +103,18 @@ void Jeu::setStatus(){
         currentStatus = Status::Egalite;
     }
 
-    std::vector<std::pair<std::pair<int, int>, std::pair<int, int>>> directions = {
-        /*{{0,0}, {1,0}}, // j,i , j,i
-        {{0,1}, {1,0}},
-        {{0,2}, {1,0}},*/
-        {{0,0}, {0,1}},
-        /*{{1,0}, {0,1}},
-        {{2,0}, {0,1}},
-        {{0,0}, {1,1}},
-        {{0,2}, {1,-1}},*/
-    };
- 
-    for(auto line : directions){
-        auto coord = line.first;
-        auto direction = line.second;
-        Cell currentColor = getCell(coord.second, coord.first);
-        if(currentColor != Cell::Vide && hasVictory(coord.second, coord.first, direction.second, direction.first, currentColor) == 3){          
-            std::cout << "///// Gagné ////" << std::endl;
-            if(currentColor == Cell::Rouge)
-                currentStatus = Status::RougeGagne;
-            else
-                currentStatus = Status::VertGagne;
-            return;
+    Cell winner = hasVictory();
+    if(winner != Cell::Vide){
+        if(winner == Cell::Rouge){
+            currentStatus = Status::RougeGagne;
+        }
+        else{
+            currentStatus = Status::VertGagne;
         }
     
     }
 
-    std::cout << std::endl;
-        
+
 
     if(currentStatus == Status::VertJoue)
         currentStatus = Status::RougeJoue;

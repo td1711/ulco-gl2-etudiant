@@ -16,7 +16,7 @@ class Jeu {
 
         void setStatus();
         bool isFinished();
-        bool hasVictory(int i, int j, int directionI, int directionJ, Cell color);
+        Cell hasVictory();
         bool isValidCell(int i, int j);
         int nbFilledCells();
 
